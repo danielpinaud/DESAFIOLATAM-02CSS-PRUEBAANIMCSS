@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.GRID-CONTAINER{
+    display: grid;
+    grid-template-areas: 
+        "NAV"
+        "FILTRO"
+        "MAIN"
+        "PAGINACION"
+        "FOOTER";
+    grid-template-rows: 0.5fr 0.5fr 20fr 0.5fr 0.5fr;
+    width: 100%;
+}
+
+.NAVEGADOR-GRID{
+    grid-area: NAV;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: rgb(94, 44, 9);
+    color: white;
+   
+}
+            .header1{
+                display: flex;
+                flex-direction: row;
+                
+            }
+
+            .menuOculto{
+                display: none;
+            }
+            .nav-link{
+                color: #D3D3D3;
+                font-weight: 500;
+            }
+            .img_redonda{
+                border-radius: 50%;
+                height: 50%;
+                width: 50%;
+            }
+
+.FILTRO-GRID{
+    grid-area: FILTRO;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: rgb(66, 63, 63);
+  
+            }
+            .FILTRO-GRID>p{
+                margin-bottom: 10px;
+                width: 90%;
+            }
+            .FILTRO-GRID>select{
+               
+                width: 90%;
+            }
+
+.MAIN-GRID{
+    grid-area: MAIN;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+               
+.producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    border: 1px solid rgb(202, 202, 202);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding-bottom: 5px;
+}
+
+                .producto:hover{
+                    transform: scale(1.03);
+                }
+                .producto>img:hover{
+                    filter:none;
+                }
+                .producto>img{
+                    height:250px;
+                    width: 250px;
+                    filter: grayscale(100%);
+                }
+                .producto>p{
+                    font-size: 20px;
+                    text-wrap: wrap;
+                }
+                .producto>button{
+                    background-color: #a66817;
+                    color: white;
+                    padding: 6px;
+                    border-radius: 10%;
+                    border: 0px solid grey;
+                }
+                .producto>button:hover{
+                    background-color:#854e0f !important;
+                }
+.PAGINACION-GRID{
+    grid-area: PAGINACION;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color:  rgb(94, 44, 9);
+}
+
+.FOOTER-GRID{
+    grid-area: FOOTER;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 21, 22);
+    color: white;
+}
+                .no-link{
+                    color:white !important;
+                }
+
+                button:hover{
+                    background-color:rgb(28, 29, 29) !important;
+                }
+
+@media (width>=576px){
+.GRID-CONTAINER{        
+        width: 100%;
+        grid-template-areas:
+        "NAV FILTRO"
+        "NAV MAIN"
+        "FOOTER PAGINACION";
+        grid-template-rows: 0.6fr 8fr 0.5fr;
+        grid-template-columns:2fr 10fr;
+    }
+
+ .NAVEGADOR-GRID{
+    grid-area: NAVEGADOR;
+        grid-area: NAV;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+            .header1{
+                display: flex;
+                flex-direction: row;
+                position:sticky;
+                top: 0;
+            }
+            .menuDesplegable{
+                display: none;
+            }
+           
+            .header1>span{
+                padding-top: 15%;
+                padding-bottom: 10%;
+                text-align: center;
+            }
+            .header1>h4{
+                text-align: center;
+                padding-top: 15%;
+                padding-bottom: 10%;
+            }
+            .menuOculto{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                position:sticky;
+                top: 105px;
+            }
+            .menuOculto>span{
+                font-size: 20px;
+            }
+            .paginador{
+                position: sticky;
+                bottom: 0;
+            }
+            .img_redonda{
+                border-radius: 50%;
+                height: 100%;
+                width: 100%;
+            }
+
+
+          
+
+.FILTRO-GRID{
+        grid-area: FILTRO;
+        position: sticky;
+        top: 0;
+       
+      
+    }
+            .FILTRO-GRID>select{
+                width: 90%;
+            }
+
+.MAIN-GRID{
+      grid-area: MAIN;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+       justify-items: center;
+       gap: 20px;
+             }
+
+.FOOTER-GRID{
+        grid-area: FOOTER;
+        position: sticky;
+        bottom: 0;
+    }
+            footer>span{
+                text-align: center;
+            }
+
+}
